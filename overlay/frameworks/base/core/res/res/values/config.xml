@@ -243,28 +243,6 @@
     <integer-array name="config_keyboardTapVibePattern">
         <item>40</item>
     </integer-array>
-	
-	<!-- Control the behavior when the user long presses the home button.
-		0 - Nothing
-		1 - Recent apps view in SystemUI
-		2 - Launch assist intent
-	 This needs to match the constants in
-	 policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
-    -->
-    <integer name="config_longPressOnHomeBehavior">1</integer>
-
-	<!-- Hardware "softkeys" present on the device, stored as a bit field.
-	 This integer should equal the sum of the corresponding value for each
-	 of the following keys present:
-		1 - Home
-		2 - Back
-		4 - Menu
-		8 - Assistant (search)
-	   16 - App switch
-	   32 - Camera
-	For example, a device with Home, Back and Menu keys would set this
-	config to 7. -->
-    <integer name="config_deviceHardwareKeys">19</integer>
 
      <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
@@ -329,6 +307,6 @@
     <string name="config_wifi_tcp_buffers" translatable="false">524288,2097152,4194304,262144,524288,1048576</string>
 
     <!-- Operating volatage for bluetooth controller. -->
-    <integer name="config_bluetooth_operating_voltage_mv">3300</integer>
+    <integer name="config_bluetooth_operating_voltage_mv">3</integer>
 
 </resources>
