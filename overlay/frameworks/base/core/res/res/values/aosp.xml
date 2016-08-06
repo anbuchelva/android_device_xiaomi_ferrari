@@ -64,18 +64,6 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">19</integer>
-	
-	<!-- Idle current for bluetooth controller. 0 by default-->
-    <integer translatable="false" name="config_bluetooth_idle_cur_ma">1</integer>
-
-    <!-- Rx current for bluetooth controller. 0 by default-->
-    <integer translatable="false" name="config_bluetooth_rx_cur_ma">1</integer>
-
-    <!-- Tx current for bluetooth controller. 0 by default-->
-    <integer translatable="false" name="config_bluetooth_tx_cur_ma">1</integer>
-
-    <!-- Operating volatage for bluetooth controller. 0 by default-->
-    <integer translatable="false" name="config_bluetooth_operating_voltage_mv">1</integer>
 		
 		 <!-- Override the default detection behavior for the framework method
          android.view.ViewConfiguration#hasPermanentMenuKey().
@@ -85,49 +73,5 @@
          2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
     <integer name="config_overrideHasPermanentMenuKey">2</integer>
 	
-	<!-- Defines the default set of global actions. Actions may still be disabled or hidden based
-         on the current state of the device.
-         Each item must be one of the following strings:
-         "power" = Power off
-         "settings" = An action to launch settings
-         "airplane" = Airplane mode toggle
-         "bugreport" = Take bug report, if available
-         "silent" = silent mode
-         "users" = list of users
-         -->
-    <string-array translatable="false" name="config_globalActionsList">
-        <item>power</item>
-		<item>bugreport</item>
-        <item>users</item>
-		<item>airplane</item>
-		<item>silent</item>
-    </string-array>
-	
-	<!-- Flag specifying whether VoLTE is available on device -->
-    <bool name="config_device_volte_available">true</bool>
-
-    <!-- Flag specifying whether VoLTE should be available for carrier: independent of
-         carrier provisioning. If false: hard disabled. If true: then depends on carrier
-         provisioning, availability etc -->
-    <bool name="config_carrier_volte_available">true</bool>
-
-    <!-- Flag specifying whether VoLTE availability is based on provisioning -->
-    <bool name="config_carrier_volte_provisioned">true</bool>
-
-    <!-- Flag specifying whether VT is available on device -->
-    <bool name="config_device_vt_available">true</bool>
-
-    <!-- Flag specifying whether VT should be available for carrier: independent of
-         carrier provisioning. If false: hard disabled. If true: then depends on carrier
-         provisioning, availability etc -->
-    <bool name="config_carrier_vt_available">true</bool>
-	
-	<!-- Flag specifying whether WFC over IMS is available on device -->
-    <bool name="config_device_wfc_ims_available">true</bool>
-
-    <!-- Flag specifying whether WFC over IMS should be available for carrier: independent of
-         carrier provisioning. If false: hard disabled. If true: then depends on carrier
-         provisioning, availability etc -->
-    <bool name="config_carrier_wfc_ims_available">true</bool>
 
 </resources>
