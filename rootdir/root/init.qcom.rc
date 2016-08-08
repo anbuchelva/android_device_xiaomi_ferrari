@@ -29,6 +29,7 @@ import init.qcom.usb.rc
 import init.target.rc
 
 on init
+    # Set permissions for persist partition
     mkdir /persist 0771 system system
     # mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
@@ -38,9 +39,6 @@ on init
     mkdir /storage/uicc0 0700 root root
     mkdir /storage/uicc1 0700 root root
     mkdir /storage/usbotg 0700 root root
-
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -96,8 +94,8 @@ on boot
     mkdir /dev/socket/netmgr 0750 radio radio
     chmod 2750 /dev/socket/netmgr
 
-    chown system camera /sys/class/leds/torch-light/brightness
-    chmod 0660 /sys/class/leds/torch-light/brightness
+    chown system camera /sys/class/leds/flashlight/brightness
+    chmod 0660 /sys/class/leds/flashlight/brightness
 
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
 
@@ -168,6 +166,9 @@ on boot
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
+
+    # Allow the power HAL to control cluster plug
+    chown system system /sys/module/cluster_plug/parameters/low_power_mode
 
     # Avoid releasing data call when Null bearer is reported to AP accidentally.
     setprop persist.radio.snapshot_enabled 1
@@ -943,3 +944,4 @@ on property:persist.radio.modem=LTE-CU
     setprop persist.radio.data_no_toggle 1
     setprop persist.fd.scroff.timer 3000
     setprop persist.fd.scron.timer 10000
+
