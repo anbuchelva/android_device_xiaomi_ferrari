@@ -16,14 +16,6 @@
 -->
 <resources>
    
-    <!-- Override the default detection behavior for the framework method
-         android.view.ViewConfiguration#hasPermanentMenuKey().
-         Valid settings are:
-         0 - No change. Use the default autodetection behavior.
-         1 - The device DOES have a permanent menu key; ignore autodetection.
-         2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
-    <integer name="config_overrideHasPermanentMenuKey">2</integer>
-    
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing
             1 - Menu key
@@ -34,7 +26,7 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
-    <integer name="config_longPressOnHomeBehavior">3</integer>
+    <integer name="config_longPressOnHomeBehavior">5</integer>
 
     <!-- Control the behavior when the user double-taps the home button.
             0 - Nothing
@@ -46,7 +38,7 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
-    <integer name="config_doubleTapOnHomeBehavior">0</integer>
+    <integer name="config_doubleTapOnHomeBehavior">4</integer>
 
     <!-- Control the behavior when the user long presses the menu button.
             0 - Nothing
@@ -71,6 +63,7 @@
             32 - Camera
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+<<<<<<< HEAD
     <integer name="config_deviceHardwareKeys">7</integer>
 			
     <!-- Flag specifying whether VoLTE is available on device -->
@@ -89,5 +82,17 @@
     <!-- Flag specifying whether VoLTE availability is based on provisioning -->
     <bool name="config_carrier_volte_provisioned">true</bool>
 
+=======
+    <integer name="config_deviceHardwareKeys">19</integer>
+		
+		 <!-- Override the default detection behavior for the framework method
+         android.view.ViewConfiguration#hasPermanentMenuKey().
+         Valid settings are:
+         0 - No change. Use the default autodetection behavior.
+         1 - The device DOES have a permanent menu key; ignore autodetection.
+         2 - The device DOES NOT have a permanent menu key; ignore autodetection. -->
+    <integer name="config_overrideHasPermanentMenuKey">2</integer>
+	
+>>>>>>> parent of fbe8879... eanble IMS
 
 </resources>
