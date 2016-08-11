@@ -5,9 +5,7 @@ vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
 
 # Audio
-lib/soundfx/libdirac.so
 etc/firmware/seltech_mono.cnt
-vendor/etc/diracmobile.config
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbrtac.so
@@ -33,16 +31,7 @@ bin/hci_qcomm_init
 vendor/lib64/libbtnv.so
 
 # Camera
-lib/hw/camera.vendor.msm8916.so
-vendor/bin/mm-qcamera-daemon
-lib/libc2dcolorconvert.so
-lib/libchromatix_imx135_liveshot.so
-lib/libchromatix_imx179_liveshot.so
-lib/libmmcamera_interface.so
-lib/libmmjpeg_interface.so
-lib/libqomx_core.so
-lib64/libchromatix_imx135_liveshot.so
-lib64/libchromatix_imx179_liveshot.so
+bin/mm-qcamera-daemon
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -376,45 +365,8 @@ etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
 etc/firmware/cpp_firmware_v1_4_0.fw
 
-# CNE/DPM - from kipper
-bin/cnd
-bin/dpmd
-etc/cne/andsfCne.xml
-etc/cne/SwimConfig.xml
-etc/dpm/nsrm/NsrmConfiguration.xml
-etc/permissions/cneapiclient.xml
-etc/permissions/com.quicinc.cne.xml
-etc/permissions/dpmapi.xml
-framework/cneapiclient.jar
-framework/com.quicinc.cne.jar
-framework/dpmapi.jar
--priv-app/CNEService/CNEService.apk
--priv-app/dpmserviceapp/dpmserviceapp.apk
-vendor/lib64/libcne.so
-vendor/lib64/libcneapiclient.so
-vendor/lib64/libcneconn.so
-vendor/lib64/libcneqmiutils.so
-vendor/lib64/libdpmctmgr.so
-vendor/lib64/libdpmfdmgr.so
-vendor/lib64/libdpmframework.so
-vendor/lib64/libdpmnsrm.so
-vendor/lib64/libNimsWrap.so
-vendor/lib64/libvendorconn.so
-vendor/lib/libcne.so
-vendor/lib/libcneapiclient.so
-vendor/lib/libcneconn.so
-vendor/lib/libcneqmiutils.so
-vendor/lib/libdpmctmgr.so
-vendor/lib/libdpmfdmgr.so
-vendor/lib/libdpmframework.so
-vendor/lib/libdpmnsrm.so
-vendor/lib/libNimsWrap.so
-vendor/lib/libvendorconn.so
-
 # DRM
-vendor/bin/qseecomd
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
+bin/qseecomd
 vendor/lib/libdrmdecrypt.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
@@ -429,7 +381,6 @@ vendor/lib/mediadrm/libwvdrmengine.so
 
 # GPS
 bin/location-mq
-vendor/bin/slim_ap_daemon
 etc/permissions/com.qualcomm.location.xml
 -lib64/libloc_api_v02.so
 -lib64/libloc_ds_api.so
@@ -503,10 +454,6 @@ etc/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw
 
 # Media
-lib/libmm-omxcore.so
-lib64/libmm-omxcore.so
-lib/libOmxVdecHevc.so
-lib64/libOmxVdecHevc.so
 vendor/lib/libDivxDrm.so
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libI420colorconvert.so
@@ -520,8 +467,7 @@ vendor/lib/libSHIMDivxDrm.so
 
 # Perf
 bin/msm_irqbalance
-vendor/bin/perfd
-vendor/lib/libqti-perfd-client.so
+bin/perfd
 vendor/lib64/libqti-perfd-client.so
 
 # Qualcomm framework
@@ -577,6 +523,7 @@ etc/permissions/qcrilhook.xml
 -framework/qcrilhook.jar
 lib64/libcnefeatureconfig.so
 lib64/librmnetctl.so
+vendor/lib64/libcneapiclient.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
@@ -587,7 +534,7 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 
 # Sensors
-#bin/sensor_select.sh
+bin/sensor_select.sh
 vendor/lib/hw/libsensors.lsm6db0.so
 vendor/lib64/hw/libsensors.lsm6db0.so
 
@@ -609,7 +556,7 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
 # Thermal
-vendor/bin/thermal-engine
+bin/thermal-engine
 vendor/lib/libthermalclient.so
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so

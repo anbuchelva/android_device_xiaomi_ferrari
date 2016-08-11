@@ -80,7 +80,7 @@ on post-fs
     write /sys/module/process_reclaim/parameters/swap_opt_eff 30
 
 #start camera server as daemon
-service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
+service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -107,7 +107,7 @@ service qrngp /system/bin/qrngp -f
 on property:sys.boot_completed=1
    start qrngp
 
-service qseecomd /system/vendor/bin/qseecomd
+service qseecomd /system/bin/qseecomd
    class core
    user root
    group root
@@ -117,12 +117,12 @@ service qseecomd /system/vendor/bin/qseecomd
 #   user system
 #   group system net_raw
 
-service perfd /system/vendor/bin/perfd
+service perfd /system/bin/perfd
    class main
    user root
    disabled
 
-service thermal-engine /system/vendor/bin/thermal-engine
+service thermal-engine /system/bin/thermal-engine
    class main
    user root
    socket thermal-send-client stream 0666 system system
