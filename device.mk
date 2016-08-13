@@ -195,8 +195,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libxml2 \
-    libstlport \
-    Snap
+    libstlport
 
 # Gello
 PRODUCT_PACKAGES += \
