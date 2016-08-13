@@ -29,20 +29,18 @@ import java.io.File;
  * otherwise visible-when-inactive keys
  */
 
+
 public class KeyDisabler {
 
-    private static String KEY_CONTROL_PATH = "/sys/devices/soc.0/78b9000.i2c/i2c-5/5-004a/disable_keys";
+    private static String CONTROL_PATH = "/proc/touchpanel/keypad_enable";
 
-    public static boolean isSupported() {
-        return new File(KEY_CONTROL_PATH).exists();
-    }
+    public static boolean isSupported() { return true; }
 
     public static boolean isActive() {
-        return Integer.parseInt(FileUtils.readOneLine(KEY_CONTROL_PATH)) == 1;
+        return FileUtils.readOneLine(CONTROL_PATH).equals("0");
     }
 
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(KEY_CONTROL_PATH, state ? "1" : "0");
+        return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "1"));
     }
-
 }
