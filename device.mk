@@ -279,7 +279,3 @@ PRODUCT_PACKAGES += \
 # Connectivity Engine support
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
-    
-# Camera
-PRODUCT_PACKAGES += \
-		Snap
