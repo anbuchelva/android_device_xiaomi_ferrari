@@ -1,2 +1,4 @@
 # Hardware revision
 ro.product.model.platform=1
+ro.use_data_netmgrd=false
+persist.data.netmgrd.qos.enable=false
