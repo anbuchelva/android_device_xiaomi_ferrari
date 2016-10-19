@@ -13,6 +13,6 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Connectivity Engine support 
-PRODUCT_PACKAGES += \ 
-    libcnefeatureconfig \ 
-    librmnetctl 
+PRODUCT_PACKAGES += \
+    libcnefeatureconfig \
+    librmnetctl
