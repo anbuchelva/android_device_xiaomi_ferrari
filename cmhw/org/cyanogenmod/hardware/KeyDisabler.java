@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2016 The CyanogenMod Project
+ * Copyright (C) 2014 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@
 
 package org.cyanogenmod.hardware;
 
-import org.cyanogenmod.internal.util.FileUtils;
+import java.io.File;
+
+import org.cyanogenmod.hardware.util.FileUtils;
 
 /*
  * Disable capacitive keys
@@ -26,20 +28,20 @@ import org.cyanogenmod.internal.util.FileUtils;
  * really should not be using this on a device with mechanical or
  * otherwise visible-when-inactive keys
  */
+
 public class KeyDisabler {
-    private static final String CONTROL_PATH =
-            "/sys/devices/soc.0/78b9000.i2c/i2c-5/5-004a/disable_keys";
+
+    private static String CONTROL_PATH = "/proc/s1302/virtual_key";
 
     public static boolean isSupported() {
-        return FileUtils.isFileReadable(CONTROL_PATH) &&
-                FileUtils.isFileWritable(CONTROL_PATH);
+        return new File(CONTROL_PATH).exists();
     }
 
     public static boolean isActive() {
-        return "0".equals(FileUtils.readOneLine(CONTROL_PATH));
+        return (FileUtils.readOneLine(CONTROL_PATH).contains("enabled"));
     }
 
     public static boolean setActive(boolean state) {
-        return FileUtils.writeLine(CONTROL_PATH, state ? "1" : "0");
+        return FileUtils.writeLine(CONTROL_PATH, (state ? "1" : "0"));
     }
 }
