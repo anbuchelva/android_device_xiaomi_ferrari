@@ -1,4 +1,3 @@
 # Kernel
 TARGET_KERNEL_CONFIG := ferrari_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/ferrari
-
+TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8916
