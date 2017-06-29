@@ -17,7 +17,10 @@ include device/cyanogen/msm8916-common/BoardConfigCommon.mk
 
 include device/xiaomi/ferrari/board/*.mk
 
-TARGET_BOARD_INFO_FILE := device/xiaomi/ferrari/board-info.txt
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_msm8916
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
 
 # inherit from the proprietary version
 -include vendor/xiaomi/ferrari/BoardConfigVendor.mk
